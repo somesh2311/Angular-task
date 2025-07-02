@@ -1,10 +1,25 @@
-<mat-card class="example-card" appearance="outlined">
+<mat-card appearance="outlined">
   <mat-card-header>
-    <mat-card-title>{{ product.title }}</mat-card-title>
+    <img [alt]="product?.title" [ngSrc]="getProductImage()" width="300" height="300">
   </mat-card-header>
   <mat-card-content>
+    <div class="p_tags">{{ product?.tags?.join(', ')}}</div>
+    <mat-divider></mat-divider>
+    <div class="product_details">
+      <div class="p_title">{{product?.title}}</div>
+      <div class="p_brand">By: {{product?.brand}}</div>
+      <app-rating [rating]="product?.rating"></app-rating>
+      <div class="p_price">
+        @if (product.discountPercentage) {
+          {{ geProductDiscountPrice() | currency}}
+        } @else {
+          {{ product.price}}
+        }
+        @if (product.discountPercentage) {
+          <span class="p_discount_price"> {{ product.price | currency}}</span>
+        }
+      </div>
+      <app-basket [productId]="product.id"></app-basket>
+    </div>
   </mat-card-content>
-  <mat-card-footer class="example-card-footer">
-
-  </mat-card-footer>
 </mat-card>

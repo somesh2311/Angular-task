@@ -1,0 +1,20 @@
+.p_tags {
+  margin: 10px 0;
+}
+
+.product_details {
+  margin: 10px 0;
+  .p_title {
+    font-size: 1.2rem;
+  }
+  .p_brand {
+    font-size: 0.8rem;
+  }
+  .p_price {
+    font-size: 1.5rem;
+  }
+  .p_discount_price {
+    font-size: 0.8rem;
+    text-decoration: line-through;
+  }
+}

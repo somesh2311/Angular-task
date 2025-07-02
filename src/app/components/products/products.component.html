@@ -1,1 +1,28 @@
-<p>users.component works!</p>
+<div class="mat-container">
+  <div>
+    <p>People's choices</p>
+    <div class="products_top_layout">
+      <div class="p_header">Best selling Products</div>
+      <div class="p_total_items">Total products in basket: {{ basketProductCount$ | async}}</div>
+    </div>
+
+  </div>
+  @if (products$ | async; as products) {
+    <div class="products_container">
+      @for (product of products; track product.id) {
+        <app-product-card [product]="product"></app-product-card>
+      }
+    </div>
+    @if (paginationSubject$ | async; as paginationData) {
+      <mat-paginator
+        [length]="totalProducts"
+        [pageSize]="paginationData.pageSize"
+        [pageIndex]="paginationData.pageIndex"
+        [pageSizeOptions]="paginationData.pageSizeOptions"
+        (page)="onPageChange($event)">
+      </mat-paginator>
+    }
+  }
+</div>
+
+

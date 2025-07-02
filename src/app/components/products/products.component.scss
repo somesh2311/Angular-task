@@ -1,0 +1,27 @@
+.products_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:20px;
+  padding: 15px 0;
+}
+.mat-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.products_top_layout {
+  display: flex;
+  justify-content: space-between;
+  .p_header {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .p_total_items {
+    font-size: 1.2rem;
+  }
+}
+
+::ng-deep .mat-mdc-paginator-container{
+  justify-content: center !important;
+}

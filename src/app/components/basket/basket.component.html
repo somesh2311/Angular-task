@@ -1,3 +1,14 @@
-<button matButton="elevated">
-  Add To Basket
-</button>
+<div class="basket_container">
+  @if (isProductInCart$ | async) {
+    <button matButton="outlined" (click)="removeFromCart()">
+      <mat-icon>remove_shopping_cart</mat-icon>
+      Remove From Basket
+    </button>
+  } @else {
+    <button matButton="outlined" (click)="addToCart()">
+      <mat-icon>add_shopping_cart</mat-icon>
+      Add To Basket
+    </button>
+  }
+</div>
+
