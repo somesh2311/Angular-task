@@ -1,14 +1,14 @@
 <mat-card appearance="outlined">
   <mat-card-header>
-    <img [alt]="product?.title" [ngSrc]="getProductImage()" width="300" height="300">
+    <img [alt]="product.title" [ngSrc]="getProductImage()" width="300" height="300">
   </mat-card-header>
   <mat-card-content>
-    <div class="p_tags">{{ product?.tags?.join(', ')}}</div>
+    <div class="p_tags">{{ product.tags.join(', ')}}</div>
     <mat-divider></mat-divider>
     <div class="product_details">
-      <div class="p_title">{{product?.title}}</div>
-      <div class="p_brand">By: {{product?.brand}}</div>
-      <app-rating [rating]="product?.rating"></app-rating>
+      <div class="p_title">{{product.title}}</div>
+      <div class="p_brand">By: {{product.brand}}</div>
+      <app-rating [rating]="product.rating"></app-rating>
       <div class="p_price">
         @if (product.discountPercentage) {
           {{ geProductDiscountPrice() | currency}}

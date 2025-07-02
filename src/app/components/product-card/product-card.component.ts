@@ -17,7 +17,7 @@ export class ProductCardComponent {
 @Input({required: true}) product!: Product;
 
   getProductImage() {
-    return this.product?.thumbnail|| '';
+    return this.product.thumbnail|| '';
   }
 
   geProductDiscountPrice() {
